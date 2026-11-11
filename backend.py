@@ -78,3 +78,17 @@ def start_game():
     return up_data
 
 
+
+def display_game_history(history):
+    print("======game history======")
+    num_game = 0
+    for game in history:
+        num_game += 1
+        print (f"""
+        ---------game number{num_game}----------
+        player name = {game["player_name"]}
+        rouns in game = {game["rounds"]}
+        player score = {game["player_score"]}
+        computer = {game["computer_score"]}
+        winner = {game["winner"]}
+        """)

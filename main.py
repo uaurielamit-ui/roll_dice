@@ -24,7 +24,9 @@ def main():
             games = storage.load_game_history()
             games.append(game)
             storage.dump_game_history(games)
-
+        if client_choice == "2":
+            game_history = storage.load_game_history()
+            backend.display_game_history(game_history)
 
 
 

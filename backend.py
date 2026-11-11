@@ -80,15 +80,44 @@ def start_game():
 
 
 def display_game_history(history):
-    print("======game history======")
+    print("         ======game history======")
     num_game = 0
     for game in history:
         num_game += 1
-        return f"""
+        print (f"""
         ---------game number{num_game}----------
         player name = {game["player_name"]}
         rouns in game = {game["rounds"]}
         player score = {game["player_score"]}
         computer = {game["computer_score"]}
         winner = {game["winner"]}
-        """
+        """)
+
+
+def print_stat(games ,p_wins, c_wins, no_winners, uman_w):
+    print(f"""
+    -----------statistics-----------
+    all games = {games}
+    players winns = {p_wins}
+    computer winns = {c_wins}
+    games itout winners = {no_winners}
+    players proset ho winn = {uman_w}%
+    """)
+
+def display_statistics(history):
+    games = len(history)
+    p_wins = 0
+    c_wins = 0
+    no_winners = 0 
+    
+    for game in history:
+        if game ["winner"] == "computer wonn":
+            c_wins +=1
+        if game ["winner"] == None:
+            no_winners += 1
+        if game ["winner"] != "computer wonn" and game ["winner"] != None:
+            p_wins += 1
+    uman_w = round((p_wins /games) *100,3)
+    print_stat(games, p_wins, c_wins, no_winners, uman_w)
+
+    

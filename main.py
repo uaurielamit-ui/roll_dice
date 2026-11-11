@@ -20,7 +20,7 @@ def main():
             #backend.start_game()
             game = backend.start_game()
             print_win = game["winner"]
-            print (f"the winner is: {print_win}")
+            print (f"the winner is: {print_win} you have: {game["player_score"]}points,  the computer have: {game["computer_score"]} points")
             games = storage.load_game_history()
             games.append(game)
             storage.dump_game_history(games)
